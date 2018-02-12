@@ -1,0 +1,60 @@
+body{
+  margin-top: 40px;
+  font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",'lucida grande',tahoma,helvetica,arial,'bitstream vera sans',sans-serif;
+}
+
+.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.table td {
+   text-align: center;   
+   vertical-align: middle;
+}
+
+.table tr {
+   text-align: center;   
+   vertical-align: middle;
+}
+
+.table th {
+   text-align: center;   
+   vertical-align: middle;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #cccccc;
+}
+
+#main_table {
+  border: 1px solid #cccccc;
+  padding: 0px;
+  margin: 0px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+  outline: none;
+}
+
+.rowTitle {
+  font-size: 20px;
+}
+
+.lip {
+  cursor: pointer;
+}
+
+.award {
+  cursor: pointer;
+}
+
+.lip:hover {
+  color: blue;
+  text-decoration: underline;
+}
