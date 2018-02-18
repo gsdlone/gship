@@ -1,6 +1,7 @@
 <?php
   session_start();
   if( $_SESSION['admin'] == "admin" ){
+    include("../conn.php");
   }else{
     header("Location: ../index.php");
   }
@@ -9,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>大连化学物研究所奖学金评审系统</title>
+  <title><?=${sitename}?>奖学金评审系统</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../bootstrap/3.3.6/css/bootstrap.min.css">
@@ -35,7 +36,6 @@
 </nav>
 
 <?php
-  include "../conn.php";
   $sql = "SELECT * FROM jxjkinds";
   $res = mysql_query($sql);
   $sql = "SELECT * FROM students";

@@ -19,7 +19,7 @@
 <body>
 <div class="container-fluid" style="width:90%;">
   <hr>
-  <h3 style="color:blue">大连化学物理研究所奖学金评审系统使用说明</h3>
+  <h3 style="color:blue">奖学金评审系统使用说明</h3>
   <hr>
   <h4 style="color:blue">导航栏</h4>
   <p><span style="color:red">个人信息：</span>单击后查看或修改个人信息。 </p>
