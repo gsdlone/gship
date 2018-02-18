@@ -1,6 +1,5 @@
 <?php
-$dbname="jxj";
-$con = mysql_connect("localhost","gsc","gsc1234");
+include("config/config.php");
 mysql_query("set names 'UTF8'");
 mysql_query("set character 'UTF8'");
 
@@ -86,8 +85,8 @@ ifactor   VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )";	
 $res = mysql_query($sql);
 /////////////////// create table
-//$sql = "insert into admin (username,password) values ('admin','21232f297a57a5a743894a0e4a801fc3')";
-//$res = mysql_query($sql);
+$sql = "insert into admin (username,password) values ('${sysuser}','${syspasswd}')";
+$res = mysql_query($sql);
 /////////////////// create table
   }
 }

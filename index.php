@@ -1,10 +1,15 @@
 <?php
+if(file_exists("config/config.php")){
+  include("conn.php");
   date_default_timezone_set('Asia/Shanghai');
+}else{
+    header("Location: install.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<title>大连化学物理研究所奖学金评审系统</title>
+  <title><?=${sitename}?>奖学金评审系统</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +27,7 @@
   
     <div class="header">
     <h1>奖学金评审系统</h1>
-    <span>中国科学院大连化学物理研究所</span>
+    <span><?=${sitename}?></span>
     </div>
   
     <div class="content">
