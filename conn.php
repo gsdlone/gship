@@ -1,5 +1,5 @@
 <?php
-include("config/config.php");
+include("json/config.php");
 mysql_query("set names 'UTF8'");
 mysql_query("set character 'UTF8'");
 
@@ -33,7 +33,9 @@ major     VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 readway   VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 teacher   VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 year      INT(11)      NOT NULL,
-password  VARCHAR(255) NOT NULL)";
+password  VARCHAR(255) NOT NULL,
+arp       VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+skind     VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL)";
 
 $res = mysql_query($sql);
 

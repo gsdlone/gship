@@ -18,11 +18,15 @@
               <td><input class="form-control" id="reg-name-mdl" <?php echo "value='{$pinfo[2]}'"?>></td>
             </tr>
             <tr>
+              <td><span class="red"></span>ARP号</td>
+              <td><input class="form-control" id="reg-arp-mdl" <?php echo "value='{$pinfo[11]}'"?>></td>
+            </tr>
+            <tr>
               <td><span class="red" ></span>手机/电话</td>
               <td><input class="form-control" id="reg-phone-mdl" <?php echo "value='{$pinfo[3]}'"?>></td>
             </tr>
             <tr>
-              <td><span class="red"></span>组别</td>
+              <td><span class="red"></span>部门</td>
               <td><input class="form-control" id="reg-telp-mdl" <?php echo "value='{$pinfo[4]}'"?>></td>
             </tr>
             <tr>
@@ -30,11 +34,15 @@
               <td><input class="form-control" id="reg-email-mdl" <?php echo "value='{$pinfo[5]}'"?>></td>
             </tr>
             <tr>
+              <td><span class="red"></span>学生类别</td>
+              <td><input class="form-control" id="reg-skind-mdl" <?php echo "value='{$pinfo[12]}'"?>></td>
+            </tr>
+            <tr>
               <td><span class="red"></span>攻读专业</td>
               <td><input class="form-control" id="reg-major-mdl" <?php echo "value='{$pinfo[6]}'"?>></td>
             </tr>
             <tr>
-              <td><span class="red"></span>攻读方式</td>
+              <td><span class="red"></span>培养层次</td>
               <td><input class="form-control" id="reg-readway-mdl" <?php echo "value='{$pinfo[7]}'"?>></td>
             </tr>
             <tr>

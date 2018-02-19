@@ -1,5 +1,5 @@
 <?php
-if(!file_exists("config/config.php")){
+if(!file_exists("json/config.php")){
 ?>    
 <!DOCTYPE html>
 <html lang="zh-CN">

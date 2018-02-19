@@ -1,5 +1,5 @@
 <?php
-if(!file_exists("config/config.php")){
+if(!file_exists("json/config.php")){
   header('Content-Type:text/html; charset=utf-8');
 
   $institution = $_POST['institution'];
@@ -19,7 +19,7 @@ if(!file_exists("config/config.php")){
 ?>
 ";
   echo $str;
-  $myfile = fopen("config/config.php", "w");
+  $myfile = fopen("json/config.php", "w");
   fwrite($myfile, $str);
   fclose($myfile);
 

@@ -17,11 +17,15 @@
               <td><input class="form-control" id="reg-name-mdl"></td>
             </tr>
             <tr>
+              <td><span class="red"></span>ARP号</td>
+              <td><input class="form-control" id="reg-arp-mdl"></td>
+            </tr>
+            <tr>
               <td><span class="red"></span>手机/电话</td>
               <td><input class="form-control" id="reg-phone-mdl"></td>
             </tr>
             <tr>
-              <td><span class="red"></span>组别</td>
+              <td><span class="red"></span>部门</td>
               <td><input class="form-control" id="reg-telp-mdl"></td>
             </tr>
             <tr>
@@ -29,11 +33,15 @@
               <td><input class="form-control" id="reg-email-mdl"></td>
             </tr>
             <tr>
+              <td><span class="red"></span>学生类别</td>
+              <td><input class="form-control" id="reg-skind-mdl" placeholder="本所生/联培生/课题组自招生"></td>
+            </tr>
+            <tr>
               <td><span class="red"></span>攻读专业</td>
               <td><input class="form-control" id="reg-major-mdl"></td>
             </tr>
             <tr>
-              <td><span class="red"></span>攻读方式</td>
+              <td><span class="red"></span>培养层次</td>
               <td><input class="form-control" id="reg-readway-mdl" placeholder="硕博/直博/统招博士/联合培养"></td>
             </tr>
             <tr>

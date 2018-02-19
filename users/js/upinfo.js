@@ -38,14 +38,30 @@ $("#upinfo").click(function(){
         return false;
     }
   
-    if(blkchk('name',       '姓名'    )) return;
-    if(blkchk('phone',      '手机/电话'  )) return;
-    if(blkchk('telp',       '组别')) return;
-    if(blkchk('email',      '邮箱'    )) return;
-    if(blkchk('major',      '攻读专业')) return;
-    if(blkchk('readway',    '攻读方式')) return;
-    if(blkchk('teacher',    '指导教师')) return;
-    if(blkchk('year',       '入学年份')) return;
+    if(blkchk('name',       '姓名'     )) return;
+    if(blkchk('arp',        'ARP号'    )) return;
+    else{
+      var reg = /^\d{4,5}$/;
+      if(!reg.exec(pass.arp)){
+        alert('ARP号为4或5位数字!');
+        return;
+      }
+    }
+    if(blkchk('phone',      '手机/电话')) return;
+    if(blkchk('telp',       '部门'     )) return;
+    if(blkchk('email',      '邮箱'     )) return;
+    if(blkchk('skind',      '学生类别' )) return;
+    else{
+      var reg = /^(本所生|联培生|课题组自招生)$/;
+      if(!reg.exec(pass.skind)){
+        alert('学生类别只能是 本所生、联培生、或课题组自招生!');
+        return;
+      }
+    }
+    if(blkchk('major',      '攻读专业' )) return;
+    if(blkchk('readway',    '培养层次' )) return;
+    if(blkchk('teacher',    '指导教师' )) return;
+    if(blkchk('year',       '入学年份' )) return;
   
     $.post("upinfo.php", pass, function(data, status){
       location.reload();

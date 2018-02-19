@@ -1,5 +1,5 @@
 <?php
-if(file_exists("config/config.php")){
+if(file_exists("json/config.php")){
   include("conn.php");
   date_default_timezone_set('Asia/Shanghai');
 }else{
@@ -40,7 +40,7 @@ if(file_exists("config/config.php")){
     <div class="footer">
     <input type="submit" name="submit" value="登录" class="button" />
     <p class="register" data-toggle="modal" data-target="#register">注册</p>
-    <p class="contact" data-container="body" data-toggle="popover" data-placement="top" data-content="联系管理员: 84379457">忘记密码?</p>
+    <p class="contact" data-container="body" data-toggle="popover" data-placement="top" data-content="联系管理员: ">忘记密码?</p>
     </div>
   </form>
 </div>
