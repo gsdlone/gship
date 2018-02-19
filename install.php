@@ -25,17 +25,18 @@ if(!file_exists("config/config.php")){
     </div>
   
     <div class="content">
-    <input id="institution" name="institution" type="text" class="input" required placeholder="单位名称"/>
-    <div class="user-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></div>    
-    <input id="dbname" name="dbname" type="text" class="input" required placeholder="数据库名"/>
-    <div class="user-icon"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></div>
     <input id="dbuser" name="dbuser" type="text" class="input" required placeholder="数据库用户名"/>
     <div class="user-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
     <input id="dbpassword" name="dbpassword" type="text" class="input" required placeholder="数据库密码" />
     <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
-    <input id="sysuser" name="sysuser" type="text" class="input" required placeholder="管理员"/>
+
+    <input id="institution" name="institution" type="text" class="input password" required placeholder="新建单位名称"/>
+    <div class="user-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></div>    
+    <input id="dbname" name="dbname" type="text" class="input" required placeholder="新建数据库名"/>
+    <div class="user-icon"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></div>
+    <input id="sysuser" name="sysuser" type="text" class="input" required placeholder="新建管理员"/>
     <div class="user-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
-    <input id="syspassword" name="syspassword" type="text" class="input" required placeholder="管理员密码" />
+    <input id="syspassword" name="syspassword" type="text" class="input" required placeholder="新建管理员密码" />
     <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
     </div>
 
