@@ -35,4 +35,22 @@ function checkIdCard($idcard){
   }
 
 }
+
+function rankScore($irank){
+    $res = 10.0;
+    switch ($irank) {
+    case '1':
+        $res = 500.0;
+        break;
+    case '2':
+        $res = 100.0;
+        break;
+    case '3':
+        $res = 30.0;
+        break;
+    case '4':
+        $res = 20.0;
+    }
+    return $res;
+}
 ?>

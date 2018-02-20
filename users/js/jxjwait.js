@@ -245,6 +245,11 @@ $("#submit").click(function(){
     pass.coauthor = $('#coauthor').is(':checked');
     pass.supervisor = $('#supervisor').is(':checked');
 
+    if(pass.coauthor && pass.seq > pass.ncoauthor){
+        alert('在共同一作情况下，署名顺序不应大于共同一作总数');
+        return false;
+    }
+
 
   $.post('modiPaper.php', pass, function(data){
     if(data == -1){
