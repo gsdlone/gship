@@ -58,7 +58,7 @@ function calweight($coaffi,$coauthor,$ncoauthor,$seq){
     if($coaffi=="true"){
         if($seq == 1) {
             $weight = 1.0;
-            if($coauthor == "true")
+            if($coauthor == "true" && $ncoauthor > 1)
                 $weight = 0.5;
         }else{
             $weight = 0.0;
