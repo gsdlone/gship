@@ -6,6 +6,7 @@ if(!isset($_SESSION['admin'])){
   exit(0);
 }
 include("../conn.php");
+include("../libs.php");
 
 $info = pathinfo($_FILES["file"]["name"]);
 $type = $info['extension'];
@@ -29,12 +30,20 @@ $res=mysql_query($sql);
 
 for ($i = 1; $i <= $highestRow; $i++){
   $journal = $sheet->getCell('A'.$i)->getValue();
-  $ifactor = $sheet->getCell('B'.$i)->getValue(); 
+  $irank = $sheet->getCell('B'.$i)->getValue();
 
-  if(!is_numeric($ifactor)){
-  $ifactor = 0.0;
+  switch ($irank) {
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+      break;
+  default:
+      $irank = '5';
   }
 
+  $ifactor = rankScore($irank);
+  
   $sql = "INSERT INTO impact (journal,ifactor) VALUES ('$journal','$ifactor')";
   $res=mysql_query($sql);
 }

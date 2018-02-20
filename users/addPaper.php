@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../conn.php');
+include('../libs.php');
 // check if variable is set and Add Journal Button pressed.
 $idcard=$_SESSION['cardid'];
 if ( $_SESSION['normal'] == "normal" && strlen($idcard) == 32 ) {
@@ -19,21 +20,7 @@ $ncoauthor = $_POST["ncoauthor"];
 $mycoauthor = $_POST["mycoauthor"];
 $supervisor = $_POST["supervisor"];
 
-if($coaffi=="true"){
-  if($coauthor=="true"){
-    $weight=1.0;
-  }elseif($seq==1){
-    $weight=1.0;
-  }elseif($seq==2){
-    $weight=0.5;
-  }elseif($seq==3){
-    $weight=0.3;
-  }else{
-    $weight=0.0;
-  }
-}else{
-  $weight = 0.0;
-}
+$weight = calweight($coaffi, $coauthor, $ncoauthor, $seq);
 
 $sql = "SELECT journal,ifactor FROM impact where journal='{$journal}'"; 
 $res=mysql_query($sql);
