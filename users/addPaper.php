@@ -19,16 +19,19 @@ $coauthor = $_POST["coauthor"];
 $ncoauthor = $_POST["ncoauthor"];
 $mycoauthor = $_POST["mycoauthor"];
 $supervisor = $_POST["supervisor"];
+$patent = $_POST["patent"];
 
 $weight = calweight($coaffi, $coauthor, $ncoauthor, $seq);
-
 $sql = "SELECT journal,ifactor FROM impact where journal='{$journal}'"; 
 $res=mysql_query($sql);
 if( $r = mysql_fetch_assoc($res) ){
   $ifactor=$r['ifactor'];
 } else {
-  $ifactor = 0;
-  $weight = 0.0;
+    if($patent == "true"){
+        $ifactor = 20.0;        
+    }else{
+        $ifactor = 0;
+    }
 }
 
 $award = "";
@@ -42,7 +45,7 @@ if($_POST["submit"]=="Add Journal")
     echo -1;
     exit;
   }
-  $sql = "INSERT INTO journals (idcard,journal,title,doi,ifactor,nauthors,seq,coaffi,coauthor,weight,award,status,ncoauthor,mycoauthor,supervisor) VALUES ('$idcard','$journal','$title','$doi','$ifactor','$nauthors','$seq','$coaffi','$coauthor','$weight','$award','$status','$ncoauthor','$mycoauthor','$supervisor')";
+  $sql = "INSERT INTO journals (idcard,journal,title,doi,ifactor,nauthors,seq,coaffi,coauthor,weight,award,status,ncoauthor,mycoauthor,supervisor,patent) VALUES ('$idcard','$journal','$title','$doi','$ifactor','$nauthors','$seq','$coaffi','$coauthor','$weight','$award','$status','$ncoauthor','$mycoauthor','$supervisor','$patent')";
   $result=mysql_query($sql,$con);
 }
 
@@ -55,7 +58,7 @@ if($_POST["submit"]=="Edit Journal"){
     echo -1;
     exit;
   }
-  $sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', weight='$weight', ncoauthor='$ncoauthor', mycoauthor='$mycoauthor', supervisor='$supervisor' WHERE idcard='$idcard' and id='$id'";
+  $sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', weight='$weight', ncoauthor='$ncoauthor', mycoauthor='$mycoauthor', supervisor='$supervisor', patent='$patent' WHERE idcard='$idcard' and id='$id'";
   $result=mysql_query($sql,$con);
 }
 ?>

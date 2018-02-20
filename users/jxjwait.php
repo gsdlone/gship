@@ -31,7 +31,7 @@
    <th colspan=10 class='rowTitle' style="background: #dcf0d6;">申请中的奖学金</th>
    </thead>
    <thead>
-   <th>编号</th> <th>刊物</th> <th>标题</th> <th>DOI</th> <th>作者</th> <th>第一单位</th> <th>共同一作</th> <th>权重</th> <th>影响因子</th> <th>状态</th>
+   <th>编号</th> <th>刊物</th> <th>标题</th> <th>DOI</th> <th>作者</th> <th>第一单位</th> <th>共同一作</th> <th>权重</th> <th>分区分数</th> <th>状态</th>
    </thead>
    <tbody id='mtb'>
    </tbody>

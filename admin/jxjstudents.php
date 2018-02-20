@@ -36,7 +36,7 @@
       echo "<th>专业</th>";
       echo "<th>指导教师</th>";
       echo "<th>文章总数</th>";
-      echo "<th>影响因子</th>";
+      echo "<th>分区分数</th>";
   echo "</thead>";
   while($row=mysql_fetch_row($res)){
     $np++;

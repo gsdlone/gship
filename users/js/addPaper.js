@@ -17,6 +17,12 @@ $(document).ready(function($){
     increaseArea: '20%'
   });
 
+  idradio = "input[id='patent']";
+  $(idradio).iCheck({
+    checkboxClass: 'icheckbox_square-aero',
+    increaseArea: '20%'
+  });
+    
   $("#btn_add").click(function(){
     $("#addpaper").modal();
 
@@ -28,6 +34,7 @@ $(document).ready(function($){
     $('#coaffi').iCheck('uncheck');
     $('#coauthor').iCheck('uncheck');
     $('#supervisor').iCheck('uncheck');
+    $('#patent').iCheck('uncheck');
     $("#ncoauthor").val('');
     $("#mycoauthor").val('');
 
@@ -134,6 +141,7 @@ $(document).ready(function($){
     pass.coaffi   = $('#coaffi').is(':checked');
     pass.coauthor = $('#coauthor').is(':checked');
     pass.supervisor = $('#supervisor').is(':checked');
+    pass.patent     = $('#patent').is(':checked');
 
     if(pass.coauthor && pass.seq > pass.ncoauthor){
         alert('在共同一作情况下，署名顺序不应大于共同一作总数');

@@ -8,7 +8,7 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item">1、<kbd style="background-color: #9383b5">期刊/专利</kbd>
-            期刊请输入期刊名，并在下拉菜单中选择，不包含在下拉菜单的期刊影响因子将设为 0；
+            期刊请输入期刊名，并在下拉菜单中选择，不包含在下拉菜单的期刊分区分数将设为 0；
             专利请填写 “发明专利”、“实用专利”、“PCT 专利” 或 “其他专利”。
           </li>
           <li class="list-group-item">2、<kbd style="background-color: #9383b5">文章/专利 标题</kbd>
@@ -20,7 +20,10 @@
         </ul>
 	  <div id="paper-id"></div>
           <div class="form-group" id="prefetch">
-            <label>期刊/专利：</label>
+            <table><tr>
+            <td><label>期刊/专利：</label></td>
+            <td><div class="checkbox"><label style="padding: 0px;"><input type="checkbox" id="patent" name="patent"/>&nbsp;请标记是否为专利</label></div></td>
+            </tr></table>
             <input type="text" class="typeahead form-control" id="journal" name="journal" placeholder="">
           </div>
           <div class="form-group">

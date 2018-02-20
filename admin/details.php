@@ -44,7 +44,7 @@
      <th>第一单位</th>
      <th>共同一作</th>
      <th>权重</th>
-     <th>影响因子</th>
+     <th>分区分数</th>
      <th>状态</th>
      <th style='min-width:102px'>审核</th>
      </thead>
@@ -108,7 +108,7 @@
      echo "<tr>";
      echo " 
        <td colspan=11>
-         加权后总影响因子：<span>$total</span>
+         加权后总分区分数：<span>$total</span>
        </td>";
      echo "</tr>";
      echo "<p id='ntr' style='display:none'>{$count}</p>";
