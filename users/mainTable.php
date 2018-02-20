@@ -1,6 +1,6 @@
 <?php
   include "../conn.php";
-  $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
+  $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status,ncoauthor,mycoauthor,supervisor FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
   $result=mysql_query($sql,$con);
   $total=0.0;
   $count = 0;
@@ -50,6 +50,9 @@
       echo "<td id=$idx>{$row['weight']}</td>";
       echo "<td style='display:none'>{$row['coaffi']}</td>";
       echo "<td style='display:none'>{$row['coauthor']}</td>";
+      echo "<td style='display:none'>{$row['ncoauthor']}</td>";
+      echo "<td style='display:none'>{$row['mycoauthor']}</td>";
+      echo "<td style='display:none'>{$row['supervisor']}</td>";
       $idy="btnCheck".$count;
       $idz="btnSel".$count;
       $ndy="btn-delete".$count;

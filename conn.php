@@ -52,7 +52,10 @@ $sql = "CREATE TABLE IF NOT EXISTS journals (
   coauthor VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   weight REAL NOT NULL,
   award VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  status VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  status VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  ncoauthor INT NOT NULL,
+  mycoauthor INT NOT NULL,
+  supervisor VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )";
 $res = mysql_query($sql);
 

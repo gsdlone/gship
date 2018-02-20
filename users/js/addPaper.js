@@ -11,6 +11,12 @@ $(document).ready(function($){
     increaseArea: '20%'
   });
 
+  idradio = "input[id='supervisor']";
+  $(idradio).iCheck({
+    checkboxClass: 'icheckbox_square-aero',
+    increaseArea: '20%'
+  });
+
   $("#btn_add").click(function(){
     $("#addpaper").modal();
 
@@ -21,6 +27,9 @@ $(document).ready(function($){
     $("#seq").val('');
     $('#coaffi').iCheck('uncheck');
     $('#coauthor').iCheck('uncheck');
+    $('#supervisor').iCheck('uncheck');
+    $("#ncoauthor").val('');
+    $("#mycoauthor").val('');
 
     $("#submit").val("Add Journal");
   });
@@ -70,6 +79,18 @@ $(document).ready(function($){
       return false;
     }
 
+    id = '#ncoauthor'
+    pass.ncoauthor = $(id).val();
+    if(pass.ncoauthor == ''){
+      return errchk(id, '共同一作作者总数');
+    }
+    if(!reg.test(pass.ncoauthor)){
+      alert('请输入正整数');
+      $(id).val('');
+      $(id).focus();
+      return false;
+    }
+
     id = '#seq';
     pass.seq = $(id).val();
     if(pass.seq == ''){
@@ -83,6 +104,19 @@ $(document).ready(function($){
       return false;
     }
 
+    id = '#mycoauthor';
+    pass.mycoauthor= $(id).val();
+    if(pass.mycoauthor== ''){
+      return errchk(id, '第一作者署名顺序');
+    }
+
+    if(!reg.test(pass.mycoauthor)){
+      alert('请输入正整数');
+      $(id).val('');
+      $(id).focus();
+      return false;
+    }
+
     var tmpseq = parseFloat(pass.seq);
     var tmpnauthors = parseFloat(pass.nauthors);
     if(tmpseq > tmpnauthors){
@@ -90,8 +124,16 @@ $(document).ready(function($){
       return false;
     }
 
+    var tmpmycoauthor = parseFloat(pass.mycoauthor);
+    var tmpncoauthor = parseFloat(pass.ncoauthor);
+    if(tmpmycoauthor > tmpncoauthor){
+      alert('第一作者署名顺序不应大于第一作者作者总数');
+      return false;
+    }
+
     pass.coaffi   = $('#coaffi').is(':checked');
     pass.coauthor = $('#coauthor').is(':checked');
+    pass.supervisor = $('#supervisor').is(':checked');
 
     pass.submit = $("#submit").val();
 

@@ -18,6 +18,13 @@ $(document).ready(function($){
     increaseArea: '20%'
   });
 
+  idradio = "input[id='supervisor']";
+  $(idradio).iCheck({
+    checkboxClass: 'icheckbox_square-aero',
+    increaseArea: '20%'
+  });
+
+
 
 var unique = function(origArr) {
   var newArr = [],
@@ -126,6 +133,9 @@ $(".jxjmodify").click(function(){
   pass.coaffi = $("#t"+n+"x6").text();
   pass.coauthor = $("#t"+n+"x7").text();
   pass.id = $("#t"+n+"x10").text();
+  pass.ncoauthor = $("#t"+n+"x11").text();
+  pass.mycoauthor = $("#t"+n+"x12").text();
+  pass.supervisor = $("#t"+n+"x13").text();
   pass.stat = btn.text();
 
   $("#journal").val(pass.journal);
@@ -133,6 +143,8 @@ $(".jxjmodify").click(function(){
   $("#doi").val(pass.doi);
   $("#nauthors").val(tmp[1]);
   $("#seq").val(tmp[0]);
+  $("#ncoauthor").val(pass.ncoauthor);
+  $("#mycoauthor").val(pass.mycoauthor);
   if ( pass.coaffi == '是') {
     $('#coaffi').iCheck('check');
   } else {
@@ -142,6 +154,11 @@ $(".jxjmodify").click(function(){
     $('#coauthor').iCheck('check');
   } else {
     $('#coauthor').iCheck('uncheck');
+  }
+  if ( pass.supervisor == '是') {
+    $('#supervisor').iCheck('check');
+  } else {
+    $('#supervisor').iCheck('uncheck');
   }
 
 $("#submit").click(function(){
@@ -190,13 +207,43 @@ $("#submit").click(function(){
       return false;
     }
 
+    id = '#ncoauthor';
+    pass.ncoauthor = $(id).val();
+    if(pass.ncoauthor == ''){
+      return errchk(id, '共同一作作者数');
+    }
+    if(!reg.test(pass.ncoauthor)){
+      alert('请输入正整数');
+      $(id).val('');
+      $(id).focus();
+      return false;
+    }
+
+    id = '#mycoauthor';
+    pass.mycoauthor = $(id).val();
+    if(pass.mycoauthor == ''){
+      return errchk(id, '共同一作作者署名顺序');
+    }
+    if(!reg.test(pass.mycoauthor)){
+      alert('请输入正整数');
+      $(id).val('');
+      $(id).focus();
+      return false;
+    }
+
     if(pass.seq > pass.nauthors){
       alert('署名顺序不应大于作者总数');
       return false;
     }
 
+    if(pass.mycoauthor > pass.ncoauthor){
+      alert('第一作者署名顺序不应大于第一作者作者总数');
+      return false;
+    }
+
     pass.coaffi   = $('#coaffi').is(':checked');
     pass.coauthor = $('#coauthor').is(':checked');
+    pass.supervisor = $('#supervisor').is(':checked');
 
 
   $.post('modiPaper.php', pass, function(data){

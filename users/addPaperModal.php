@@ -43,7 +43,18 @@
 		  <label style="padding: 0px;"><input type="checkbox" id="coaffi" name="coaffi"/>&nbsp;第一单位文章</label>
           </div>
           <div class="checkbox">
+		  <label style="padding: 0px;"><input type="checkbox" id="supervisor" name="supervisor"/>&nbsp;通讯作者为纳米所导师</label>
+          </div>
+          <div class="checkbox">
 		  <label style="padding: 0px;"><input type="checkbox" id="coauthor" name="coauthor"/>&nbsp;我是共同一作作者</label>
+          </div>
+          <div class="form-group">
+            <label>共同一作作者总数：</label>
+            <input type="text" class="form-control" id="ncoauthor" name="ncoauthor" placeholder="输入一个正整数">
+          </div>
+          <div class="form-group">
+            <label>共同一作署名顺序：</label>
+            <input type="text" class="form-control" id="mycoauthor" name="mycoauthor" placeholder="输入一个正整数">
           </div>
       </div>
       <div class="modal-footer">

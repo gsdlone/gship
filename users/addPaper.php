@@ -15,6 +15,9 @@ $nauthors = $_POST["nauthors"];
 $seq = $_POST["seq"];
 $coaffi = $_POST["coaffi"];
 $coauthor = $_POST["coauthor"];
+$ncoauthor = $_POST["ncoauthor"];
+$mycoauthor = $_POST["mycoauthor"];
+$supervisor = $_POST["supervisor"];
 
 if($coaffi=="true"){
   if($coauthor=="true"){
@@ -52,7 +55,7 @@ if($_POST["submit"]=="Add Journal")
     echo -1;
     exit;
   }
-  $sql = "INSERT INTO journals (idcard,journal,title,doi,ifactor,nauthors,seq,coaffi,coauthor,weight,award,status) VALUES ('$idcard','$journal','$title','$doi','$ifactor','$nauthors','$seq','$coaffi','$coauthor','$weight','$award','$status')";
+  $sql = "INSERT INTO journals (idcard,journal,title,doi,ifactor,nauthors,seq,coaffi,coauthor,weight,award,status,ncoauthor,mycoauthor,supervisor) VALUES ('$idcard','$journal','$title','$doi','$ifactor','$nauthors','$seq','$coaffi','$coauthor','$weight','$award','$status','$ncoauthor','$mycoauthor','$supervisor')";
   $result=mysql_query($sql,$con);
 }
 
@@ -65,7 +68,7 @@ if($_POST["submit"]=="Edit Journal"){
     echo -1;
     exit;
   }
-  $sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', weight='$weight' WHERE idcard='$idcard' and id='$id'";
+  $sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', weight='$weight', ncoauthor='$ncoauthor', mycoauthor='$mycoauthor', supervisor='$supervisor' WHERE idcard='$idcard' and id='$id'";
   $result=mysql_query($sql,$con);
 }
 ?>

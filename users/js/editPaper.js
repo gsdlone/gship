@@ -11,6 +11,9 @@ $(".btn-edit").click(function(){
   var nas      = tds.eq(4).text();
   var coaffi   = tds.eq(7).text();
   var coauthor = tds.eq(8).text();
+  var ncoauthor = tds.eq(9).text();
+  var mycoauthor = tds.eq(10).text();
+  var supervisor = tds.eq(11).text();
 
   reg = /[1-9][0-9]*/g;
   var arr = nas.match(reg);
@@ -35,6 +38,12 @@ $(".btn-edit").click(function(){
   id = "#seq";
   $(id).val(seq);
 
+  id = "#ncoauthor";
+  $(id).val(ncoauthor);
+
+  id = "#mycoauthor";
+  $(id).val(mycoauthor);
+
   id = "#coaffi";
   if(coaffi == 'true'){
     $(id).iCheck('check');
@@ -44,6 +53,13 @@ $(".btn-edit").click(function(){
 
   id = "#coauthor";
   if(coauthor == 'true'){
+    $(id).iCheck('check');
+  }else{
+    $(id).iCheck('uncheck');
+  }
+
+  id = "#supervisor";
+  if(supervisor == 'true'){
     $(id).iCheck('check');
   }else{
     $(id).iCheck('uncheck');
