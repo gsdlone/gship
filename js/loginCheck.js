@@ -126,7 +126,7 @@ $('#register').find('.modal-footer #confirm').on('click', function(){
   if(blkchk('teacher',    '指导教师')) return;
   if(blkchk('year',       '入学年份')) return;
   else{
-    var reg = /(19|20)[0-9][0-9]/;
+    var reg = /^(19|20)[0-9][0-9]$/;
     if(!reg.exec(pass.year)){
       alert('入学年份请输入1900-2099之间的整数!');
       return;
