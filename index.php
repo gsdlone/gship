@@ -40,7 +40,7 @@ if(file_exists("json/config.php")){
     <div class="footer">
     <input type="submit" name="submit" value="登录" class="button" />
     <p class="register" data-toggle="modal" data-target="#register">注册</p>
-    <p class="contact" data-container="body" data-toggle="popover" data-placement="top" data-content="联系管理员: ">忘记密码?</p>
+    <p class="contact" data-container="body" data-toggle="popover" data-placement="top" data-content="联系管理员: <?=${adminphone}?>">忘记密码?</p>
     </div>
   </form>
 </div>
