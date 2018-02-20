@@ -38,6 +38,8 @@ if(!file_exists("json/config.php")){
     <div class="user-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
     <input id="syspassword" name="syspassword" type="text" class="input" required placeholder="新建管理员密码" />
     <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+    <input id="adminphone" name="adminphone" type="text" class="input" required placeholder="管理员电话" />
+    <div class="user-icon"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></div>
     </div>
 
     <div class="footer">
