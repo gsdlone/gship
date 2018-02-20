@@ -76,9 +76,9 @@ for ($j=1; $j<=$np; $j++) {
 			$objPHPExcel->getActiveSheet()->SetCellValue("G${line}", "论文(成果)名称");
 			$objPHPExcel->getActiveSheet()->SetCellValue("I${line}", "作者署名顺序/作者总数");
 			$objPHPExcel->getActiveSheet()->SetCellValue("J${line}", "发表刊物[名称,doi]");
-			$objPHPExcel->getActiveSheet()->SetCellValue("K${line}", "文章影响因子(按最新影响因子计算)");
+			$objPHPExcel->getActiveSheet()->SetCellValue("K${line}", "文章分区分数(按最新分区分数计算)");
 			$objPHPExcel->getActiveSheet()->SetCellValue("L${line}", "按作者排序比例");
-			$objPHPExcel->getActiveSheet()->SetCellValue("M${line}", "影响因子(按照作者署名顺序计算)");
+			$objPHPExcel->getActiveSheet()->SetCellValue("M${line}", "分区分数(按照作者署名顺序计算)");
 			$objPHPExcel->getActiveSheet()->getStyle("A${line}:M${line}")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 			$objPHPExcel->getActiveSheet()->getStyle("A${line}:M${line}")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
 			$objPHPExcel->getActiveSheet()->getStyle("A${line}:M${line}")->getFont()->setSize(10);  
@@ -181,10 +181,10 @@ for ($j=1; $j<=$np; $j++) {
 			}
 
 			$tmp = sprintf("%.3f", $sumifact);
-   		    $objPHPExcel->getActiveSheet()->SetCellValue("H${line}", "文章总影响因子=$tmp");
+   		    $objPHPExcel->getActiveSheet()->SetCellValue("H${line}", "文章总分区分数=$tmp");
 
 			$tmp = sprintf("%.3f", $firstifact);
-   		    $objPHPExcel->getActiveSheet()->SetCellValue("M${line}", "第一作者文章影响因子=$tmp");
+   		    $objPHPExcel->getActiveSheet()->SetCellValue("M${line}", "第一作者文章分区分数=$tmp");
 		    $objPHPExcel->getActiveSheet()->getStyle("H${line}:M${line}")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 			$objPHPExcel->getActiveSheet()->getStyle("H${line}:M${line}")->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
 			$objPHPExcel->getActiveSheet()->getStyle("H${line}:M${line}")->getFont()->setSize(10);  

@@ -21,16 +21,22 @@ $coauthor = $_POST["coauthor"];
 $ncoauthor = $_POST["ncoauthor"];
 $mycoauthor = $_POST["mycoauthor"];
 $supervisor = $_POST["supervisor"];
+$patent = $_POST["patent"];
 
 $weight = calweight($coaffi, $coauthor, $ncoauthor, $seq);
+echo "coaffi: ${coaffi}";
+exit;
 
 $sql = "SELECT journal,ifactor FROM impact where journal='{$journal}'"; 
 $res=mysql_query($sql);
 if( $r = mysql_fetch_assoc($res) ){
   $ifactor=$r['ifactor'];
 } else {
-  $ifactor = 0;
-  $weight = 0.0;
+    if(!$patent){
+        $ifactor = 0;
+    }else{
+        $ifactor = 20.0;
+    }
 }
 
 
@@ -59,6 +65,6 @@ if ( $choice == '待修改' ) {
   }
 }
 
-$sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', ncoauthor='$ncoauthor',mycoauthor='$mycoauthor',supervisor='$supervisor', weight='$weight', award='$award', status='$status' WHERE idcard='$idcard' and id='$id'";
+$sql = "UPDATE journals SET journal='$journal', title='$title', doi='$doi', ifactor='$ifactor', nauthors='$nauthors', seq='$seq', coaffi='$coaffi', coauthor='$coauthor', ncoauthor='$ncoauthor',mycoauthor='$mycoauthor',supervisor='$supervisor', patent='$patent', weight='$weight', award='$award', status='$status' WHERE idcard='$idcard' and id='$id'";
 $result=mysql_query($sql);
 ?>

@@ -14,7 +14,8 @@ $(".btn-edit").click(function(){
   var ncoauthor = tds.eq(9).text();
   var mycoauthor = tds.eq(10).text();
   var supervisor = tds.eq(11).text();
-
+  var patent     = tds.eq(12).text();
+    
   reg = /[1-9][0-9]*/g;
   var arr = nas.match(reg);
   var nauthors = arr[1];
@@ -65,6 +66,13 @@ $(".btn-edit").click(function(){
     $(id).iCheck('uncheck');
   }
 
+  id = "#patent";
+  if(patent == 'true'){
+    $(id).iCheck('check');
+  }else{
+    $(id).iCheck('uncheck');
+  }
+    
   id = "#submit";
   $(id).val("Edit Journal");
   if(pass.journal == ''){

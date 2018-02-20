@@ -112,7 +112,7 @@ for ( ijxj=0; ijxj<njxj; ijxj++ ) {
       $("#mtb").append(str);
     }
   }
-  str = "<tr><td colspan=10>加权影响因子：" + totalif.toFixed(3) +"</td></tr>";
+  str = "<tr><td colspan=10>加权分区分数：" + totalif.toFixed(3) +"</td></tr>";
   $("#mtb").append(str);
 }
 
@@ -244,12 +244,12 @@ $("#submit").click(function(){
     pass.coaffi   = $('#coaffi').is(':checked');
     pass.coauthor = $('#coauthor').is(':checked');
     pass.supervisor = $('#supervisor').is(':checked');
-
+    pass.patent     = $('#patent').is(':checked');
+    
     if(pass.coauthor && pass.seq > pass.ncoauthor){
         alert('在共同一作情况下，署名顺序不应大于共同一作总数');
         return false;
     }
-
 
   $.post('modiPaper.php', pass, function(data){
     if(data == -1){

@@ -3,7 +3,7 @@
 <th>标题</th>
 <th>DOI</th>
 <th>作者</th>
-<th>影响因子</th>
+<th>分区分数</th>
 <th>权重</th>
 <th colspan=2>
  操作

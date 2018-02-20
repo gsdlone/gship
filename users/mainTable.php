@@ -1,6 +1,6 @@
 <?php
   include "../conn.php";
-  $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status,ncoauthor,mycoauthor,supervisor FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
+  $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status,ncoauthor,mycoauthor,supervisor,patent FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
   $result=mysql_query($sql,$con);
   $total=0.0;
   $count = 0;
@@ -14,7 +14,10 @@
       if( $r = mysql_fetch_assoc($res) ){
         $row['ifactor'] = $r['ifactor'];
       } else {
-        $row['ifactor'] = 0;
+          $row['ifactor'] = 0;
+          if($row['patent'] == "true"){
+              $row['ifactor'] = 20.0;        
+          }
       }
       $total=$total+$row['ifactor']*$row['weight'];
 	  if($row['weight'] == 1){
@@ -53,6 +56,7 @@
       echo "<td style='display:none'>{$row['ncoauthor']}</td>";
       echo "<td style='display:none'>{$row['mycoauthor']}</td>";
       echo "<td style='display:none'>{$row['supervisor']}</td>";
+      echo "<td style='display:none'>{$row['patent']}</td>";      
       $idy="btnCheck".$count;
       $idz="btnSel".$count;
       $ndy="btn-delete".$count;
@@ -68,7 +72,7 @@
   echo "<tr>";
   echo " 
     <td colspan=9>
-      加权影响因子：<span id='totalIF'>$total</span>; 一作影响因子：$firstot; 一作最高影响因子：$firstmax
+      加权分区分数：<span id='totalIF'>$total</span>; 一作分区分数：$firstot; 一作最高分区分数：$firstmax
     </td>";
   echo "</tr>";
   echo "<p id='ntrs' style='display:none'>{$count}</p>";

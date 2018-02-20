@@ -23,7 +23,7 @@
 	<thead>
 		<th>序号</th>
 		<th>杂志名</th>
-		<th>影响因子</th>
+		<th>分区分数</th>
 	</thead>
 	<tbody>
 <?php

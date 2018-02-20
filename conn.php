@@ -55,7 +55,8 @@ $sql = "CREATE TABLE IF NOT EXISTS journals (
   status VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   ncoauthor INT NOT NULL,
   mycoauthor INT NOT NULL,
-  supervisor VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  supervisor VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  patent VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 )";
 $res = mysql_query($sql);
 

@@ -102,9 +102,9 @@
       echo "<th>专业</th>";
       echo "<th>指导教师</th>";
       echo "<th>文章总数</th>";
-      echo "<th>一作影响因子</th>";
+      echo "<th>一作分区分数</th>";
       echo "<th>一作最高因子</th>";
-      echo "<th>影响因子</th>";
+      echo "<th>分区分数</th>";
       echo "<th>状态</th>";
       echo "</thead>";
       $nl = 0;
