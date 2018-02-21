@@ -12,9 +12,8 @@ $(".btn-edit").click(function(){
   var coaffi   = tds.eq(7).text();
   var coauthor = tds.eq(8).text();
   var ncoauthor = tds.eq(9).text();
-  var mycoauthor = tds.eq(10).text();
-  var supervisor = tds.eq(11).text();
-  var patent     = tds.eq(12).text();
+  var supervisor = tds.eq(10).text();
+  var patent     = tds.eq(11).text();
     
   reg = /[1-9][0-9]*/g;
   var arr = nas.match(reg);
@@ -41,9 +40,6 @@ $(".btn-edit").click(function(){
 
   id = "#ncoauthor";
   $(id).val(ncoauthor);
-
-  id = "#mycoauthor";
-  $(id).val(mycoauthor);
 
   id = "#coaffi";
   if(coaffi == 'true'){

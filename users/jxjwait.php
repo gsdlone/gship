@@ -39,7 +39,7 @@
 </div>
  <?php
    include "../conn.php";
-   $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status,ncoauthor,mycoauthor,supervisor FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
+   $sql = "SELECT id,journal,title,doi,nauthors,seq,ifactor,weight,coaffi,coauthor,award,status,ncoauthor,supervisor,patent FROM journals WHERE idcard='".mysql_real_escape_string($_SESSION['cardid'])."'";
    $result=mysql_query($sql);
    $output = array();
    $nj = 0;
@@ -87,8 +87,8 @@
        echo "<p id='{$idx}x9' style='display:none'>{$row['ifactor']}</p>";
        echo "<p id='{$idx}x10' style='display:none'>{$row['id']}</p>";
        echo "<p id='{$idx}x11' style='display:none'>{$row['ncoauthor']}</p>";
-       echo "<p id='{$idx}x12' style='display:none'>{$row['mycoauthor']}</p>";
-       echo "<p id='{$idx}x13' style='display:none'>{$row['supervisor']}</p>";
+       echo "<p id='{$idx}x12' style='display:none'>{$row['supervisor']}</p>";
+       echo "<p id='{$idx}x13' style='display:none'>{$row['patent']}</p>";
        echo "</div>";
        /////////////////////// table contents
        echo "<p id='{$idx}n' style='display:none'>{$flag}</p>";

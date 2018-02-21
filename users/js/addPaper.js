@@ -36,7 +36,6 @@ $(document).ready(function($){
     $('#supervisor').iCheck('uncheck');
     $('#patent').iCheck('uncheck');
     $("#ncoauthor").val('');
-    $("#mycoauthor").val('');
 
     $("#submit").val("Add Journal");
   });
@@ -111,30 +110,10 @@ $(document).ready(function($){
       return false;
     }
 
-    id = '#mycoauthor';
-    pass.mycoauthor= $(id).val();
-    if(pass.mycoauthor== ''){
-      return errchk(id, '第一作者署名顺序');
-    }
-
-    if(!reg.test(pass.mycoauthor)){
-      alert('请输入正整数');
-      $(id).val('');
-      $(id).focus();
-      return false;
-    }
-
     var tmpseq = parseFloat(pass.seq);
     var tmpnauthors = parseFloat(pass.nauthors);
     if(tmpseq > tmpnauthors){
       alert('署名顺序不应大于作者总数');
-      return false;
-    }
-
-    var tmpmycoauthor = parseFloat(pass.mycoauthor);
-    var tmpncoauthor = parseFloat(pass.ncoauthor);
-    if(tmpmycoauthor > tmpncoauthor){
-      alert('第一作者署名顺序不应大于第一作者作者总数');
       return false;
     }
 

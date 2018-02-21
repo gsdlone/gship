@@ -55,10 +55,6 @@
             <label>共同一作作者总数：</label>
             <input type="text" class="form-control" id="ncoauthor" name="ncoauthor" placeholder="输入一个正整数">
           </div>
-          <div class="form-group">
-            <label>共同一作署名顺序：</label>
-            <input type="text" class="form-control" id="mycoauthor" name="mycoauthor" placeholder="输入一个正整数">
-          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
