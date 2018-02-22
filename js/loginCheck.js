@@ -123,6 +123,13 @@ $('#register').find('.modal-footer #confirm').on('click', function(){
   }
   if(blkchk('major',      '攻读专业')) return;
   if(blkchk('readway',    '培养层次')) return;
+  else{
+    var reg = /^(硕博|直博|统招博士|联合培养)$/;
+    if(!reg.exec(pass.readway)){
+      alert('培养层次只能是 硕博、直博、统招博士或联合培养!');
+      return;
+    }
+  }
   if(blkchk('teacher',    '指导教师')) return;
   if(blkchk('year',       '入学年份')) return;
   else{
