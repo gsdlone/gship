@@ -4,7 +4,7 @@ mysql_query("set names 'UTF8'");
 mysql_query("set character 'UTF8'");
 
 if(!$con) {
-  die('Could not connect: '.mysql_error());
+  die("数据库用户名或密码错误！");
 }
 
 $db_selected = mysql_select_db($dbname, $con);
