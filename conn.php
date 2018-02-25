@@ -4,6 +4,7 @@ mysql_query("set names 'UTF8'");
 mysql_query("set character 'UTF8'");
 
 if(!$con) {
+  unlink("./json/config.php");
   die("数据库用户名或密码错误！");
 }
 
