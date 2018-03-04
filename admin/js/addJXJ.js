@@ -4,7 +4,7 @@ $(document).ready(function($){
 $("#btnAddJXJ").click(function(){
   $("#modalAddJXJ").modal();
   $("#newJXJ").val('');
-  for(i=0; i<3; i++){
+  for(i=0; i<8; i++){
     $('#jxj'+i).prop('checked',false);
   }
   $("#submitJXJ").val("Add JXJ");
@@ -34,7 +34,7 @@ $("#submitJXJ").click(function(){
 
   var tmp, ntotal, idx;
   ntotal = 0;
-  for(i=0; i<3; i++){
+  for(i=0; i<8; i++){
     tmp = $('#jxj'+i).prop('checked');
     if(tmp) {
       ntotal++;

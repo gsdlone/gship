@@ -17,6 +17,12 @@
     $res=mysql_query($sql);
   }
 
+  $sql = "SELECT readway FROM users WHERE cardid='".mysql_real_escape_string($idcard)."'";
+  $res=mysql_query($sql);
+  while($row=mysql_fetch_row($res)){
+    $readway = $row[0];
+  }
+
   $sql = "SELECT id,award,status FROM journals WHERE idcard='".mysql_real_escape_string($idcard)."'";
   $res=mysql_query($sql);
   while($row=mysql_fetch_row($res)){
@@ -24,16 +30,20 @@
     $statx = "";
     $awardx = "";
     $jxjs = explode("|",$row[1]);
-    $stat = explode("|",$row[2]);
+    $stat = explode("|",$row[2]); // 如 0.F|1.T|
     $n = count($jxjs);
     $n--;
     for ( $i=0; $i<$n; $i++ ) {
-      if ( $jxjs[$i] == $award ) {
-        if ( $choice == 'true' ) { // 若没有获得该奖学金，去掉该奖学金选项
-          $x00 = explode(".",$stat[$i]);
-          $x = $x00[0];
+      if ( $jxjs[$i] == $award ) { // 若为将要入档的奖学金
+        if ( $choice == 'true' ) { // 若获得该奖学金,将状态改为T
+          $x00 = explode(".",$stat[$i]); // 如 0.F
+          $x = $x00[0]; // 所申请的奖学金level
           $statx = $statx.$x.".T|";
           $awardx = $awardx.$jxjs[$i]."|";
+          if ( $x == "0" ) { // 若为国家奖学金
+            $sql = "UPDATE users SET national='{$readway}' WHERE cardid='".mysql_real_escape_string($idcard)."'";
+            $result=mysql_query($sql);
+          }
         }
       } else {
         $statx = $statx.$stat[$i]."|"; // 保留其他奖学金选项

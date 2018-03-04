@@ -13,6 +13,7 @@ $readway  = $_POST["readway"];
 $teacher  = $_POST["teacher"];
 $year     = $_POST["year"];
 $password = $_POST["password"];
+$national = "无";
 
 if($cardid != ''){
   $sql = "SELECT * FROM users WHERE cardid='${cardid}'";
@@ -20,8 +21,8 @@ if($cardid != ''){
 
   $ret = 0;
   if(!$row = mysql_fetch_row($res)){
-    $sql = "INSERT INTO users (cardid,name,phone,telp,email,major,readway,teacher,year,password,arp,skind) 
-VALUES ('${cardid}', '${name}', '${phone}', '${telp}', '${email}', '${major}', '${readway}', '${teacher}', '${year}', '${password}', '${arp}', '${skind}')";
+    $sql = "INSERT INTO users (cardid,name,phone,telp,email,major,readway,teacher,year,password,arp,skind,national) 
+VALUES ('${cardid}', '${name}', '${phone}', '${telp}', '${email}', '${major}', '${readway}', '${teacher}', '${year}', '${password}', '${arp}', '${skind}', '${national}')";
     $res = mysql_query($sql);
   }else{
     $ret = -1;

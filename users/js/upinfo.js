@@ -61,9 +61,9 @@ $("#upinfo").click(function(){
     if(blkchk('major',      '攻读专业' )) return;
     if(blkchk('readway',    '培养层次' )) return;
     else{
-      var reg = /^(硕博|直博|统招博士|联合培养)$/;
+      var reg = /^(硕士|博士)$/;
       if(!reg.exec(pass.readway)){
-        alert('培养层次只能是 硕博、直博、统招博士或联合培养!');
+        alert('培养层次只能是 硕士、博士!');
         return;
       }
     }

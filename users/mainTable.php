@@ -50,11 +50,13 @@
         echo "<td id=$idx>{$row['ifactor']}</td>";
       }
       $idx = "w".$count;
+      $idaffi = "affi".$count;
+      $idsuper = "super".$count;
       echo "<td id=$idx>{$row['weight']}</td>";
-      echo "<td style='display:none'>{$row['coaffi']}</td>";
+      echo "<td id=$idaffi style='display:none'>{$row['coaffi']}</td>";
       echo "<td style='display:none'>{$row['coauthor']}</td>";
       echo "<td style='display:none'>{$row['ncoauthor']}</td>";
-      echo "<td style='display:none'>{$row['supervisor']}</td>";
+      echo "<td id=$idsuper style='display:none'>{$row['supervisor']}</td>";
       echo "<td style='display:none'>{$row['patent']}</td>";      
       $idy="btnCheck".$count;
       $idz="btnSel".$count;

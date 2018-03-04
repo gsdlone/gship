@@ -36,7 +36,8 @@ teacher   VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 year      INT(11)      NOT NULL,
 password  VARCHAR(255) NOT NULL,
 arp       VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-skind     VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL)";
+skind     VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+national  VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL)";
 
 $res = mysql_query($sql);
 

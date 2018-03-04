@@ -10,7 +10,7 @@ $(".btn-archive").click(function(){
   //});
   //if ( test == 1 ) {
   //alert(test);
-  if(!confirm('请确认是否入档！入档之后当前表单人员信息将被清除！之后选中人员留存！请确认！')){
+  if(!confirm('请确认是否入档！入档之后当前表单人员信息将被清除！被选中人员信息将被存档！请确认！')){
 	  return;
   }
   var i, action;
