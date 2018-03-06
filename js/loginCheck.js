@@ -176,14 +176,4 @@ $(regid('pwd-confirm')).blur(function(){
     alert('两次密码不一致，请重新输入！');
     }
 });
-
-$(regid('year')).blur(function(){
-  id = regid('year');
-  cardid = $(id).val();
-    var reg = /(19|20)[0-9][0-9]/;
-    if(!reg.exec(cardid)){
-      alert('入学年份请输入1900-2099之间的整数！');
-      return;
-    }
-});
 });
