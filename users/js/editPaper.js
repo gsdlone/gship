@@ -50,10 +50,22 @@ $(".btn-edit").click(function(){
 
   id = "#coauthor";
   if(coauthor == 'true'){
-    $(id).iCheck('check');
+      $(id).iCheck('check');
   }else{
-    $(id).iCheck('uncheck');
+      $(id).iCheck('uncheck');
+      $("#totalnumlabel").hide();
+      $("#ncoauthor").hide();
   }
+
+  $(id).on('ifChecked', function(event){
+      $("#totalnumlabel").show();
+      $("#ncoauthor").show();      
+  });
+  $(id).on('ifUnchecked', function(event){
+      $("#totalnumlabel").hide();
+      $("#ncoauthor").val('1');      
+      $("#ncoauthor").hide();
+  });
 
   id = "#supervisor";
   if(supervisor == 'true'){

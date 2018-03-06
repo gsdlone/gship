@@ -10,6 +10,15 @@ $(document).ready(function($){
     checkboxClass: 'icheckbox_square-aero',
     increaseArea: '20%'
   });
+  $(idradio).on('ifChecked', function(event){
+      $("#totalnumlabel").show();
+      $("#ncoauthor").show();
+  });      
+  $(idradio).on('ifUnchecked', function(event){
+      $("#totalnumlabel").hide();
+      $("#ncoauthor").val('1');      
+      $("#ncoauthor").hide();
+  });      
 
   idradio = "input[id='supervisor']";
   $(idradio).iCheck({
@@ -35,7 +44,9 @@ $(document).ready(function($){
     $('#coauthor').iCheck('uncheck');
     $('#supervisor').iCheck('uncheck');
     $('#patent').iCheck('uncheck');
-    $("#ncoauthor").val('');
+    $("#ncoauthor").val('1');
+    $("#totalnumlabel").hide();
+    $("#ncoauthor").hide();
 
     $("#submit").val("Add Journal");
   });

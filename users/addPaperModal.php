@@ -52,7 +52,7 @@
 		  <label style="padding: 0px;"><input type="checkbox" id="coauthor" name="coauthor"/>&nbsp;我是共同一作作者</label>
           </div>
           <div class="form-group">
-            <label>共同一作作者总数：</label>
+            <label id="totalnumlabel">共同一作作者总数：</label>
             <input type="text" class="form-control" id="ncoauthor" name="ncoauthor" placeholder="输入一个正整数">
           </div>
       </div>
