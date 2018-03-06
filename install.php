@@ -27,7 +27,7 @@ if(!file_exists("json/config.php")){
     <div class="content">
     <input id="dbuser" name="dbuser" type="text" class="input" required placeholder="数据库用户名"/>
     <div class="user-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
-    <input id="dbpassword" name="dbpassword" type="text" class="input" required placeholder="数据库密码" />
+    <input id="dbpassword" name="dbpassword" type="password" class="input" required placeholder="数据库密码" />
     <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
 
     <input id="institution" name="institution" type="text" class="input password" required placeholder="新建单位名称"/>
@@ -36,7 +36,9 @@ if(!file_exists("json/config.php")){
     <div class="user-icon"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></div>
     <input id="sysuser" name="sysuser" type="text" class="input" required placeholder="新建管理员"/>
     <div class="user-icon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
-    <input id="syspassword" name="syspassword" type="text" class="input" required placeholder="新建管理员密码" />
+    <input id="syspassword" name="syspassword" type="password" class="input" required placeholder="新建管理员密码" />
+    <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+    <input id="syspassword2" name="syspassword2" type="password" class="input" required placeholder="确认管理员密码" />
     <div class="user-icon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
     <input id="adminphone" name="adminphone" type="text" class="input" required placeholder="管理员电话" />
     <div class="user-icon"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span></div>

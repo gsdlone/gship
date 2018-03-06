@@ -3,9 +3,15 @@ include("json/config.php");
 mysql_query("set names 'UTF8'");
 mysql_query("set character 'UTF8'");
 
+
 if(!$con) {
   unlink("./json/config.php");
   die("数据库用户名或密码错误！");
+}
+
+if(!$confirm) {
+  unlink("./json/config.php");
+  die("两次输入的管理员密码不一致！请重新输入");
 }
 
 $db_selected = mysql_select_db($dbname, $con);

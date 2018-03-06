@@ -8,7 +8,9 @@ if(!file_exists("json/config.php")){
   $dbpasswd    = $_POST['dbpassword'];
   $sysuser     = $_POST['sysuser'];
   $syspasswd   = md5($_POST['syspassword']);
+  $syspasswd2   = md5($_POST['syspassword2']);
   $adminphone  = $_POST['adminphone'];
+
 
   $str = "
 <?php
@@ -17,6 +19,8 @@ if(!file_exists("json/config.php")){
 \$sitename = \"${institution}\";
 \$sysuser  = \"${sysuser}\";
 \$syspasswd = \"${syspasswd}\";
+\$syspasswd2 = \"${syspasswd2}\";
+\$confirm = (\"${syspasswd}\" == \"${syspasswd2}\");
 \$adminphone = \"${adminphone}\";
 ?>
 ";
