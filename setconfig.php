@@ -12,8 +12,7 @@ if(!file_exists("json/config.php")){
   $adminphone  = $_POST['adminphone'];
 
 
-  $str = "
-<?php
+  $str = "<?php
 \$dbname=\"${dbname}\";
 \$con = mysql_connect(\"localhost\",\"${dbuser}\",\"${dbpasswd}\");
 \$sitename = \"${institution}\";
